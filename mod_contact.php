@@ -1,22 +1,23 @@
 <?php
 /**
- * @package		Contact
- * @subpackage	mod_contact
- * @copyright	Copyright (C) AtomTech, Inc. All rights reserved.
- * @license		GNU General Public License version 2 or later; see LICENSE.txt
+ * @package     Contact
+ * @subpackage  mod_contact
+ * @copyright   Copyright (C) 2012 AtomTech, Inc. All rights reserved.
+ * @license     GNU General Public License version 2 or later; see LICENSE.txt
  */
 
-// no direct access
+// No direct access
 defined('_JEXEC') or die;
 
 // Include the syndicate functions only once
-require_once dirname(__FILE__).'/helper.php';
+require_once dirname(__FILE__) . '/helper.php';
 
 $app = &JFactory::getApplication();
 $action = JRequest::getVar('action', null, 'POST');
 
-if ($action == 'send') {
-    modContactHelper::sendEmail($params);
+if ($action == 'send')
+{
+	modContactHelper::sendEmail($params);
 	$app->redirect(JURI::getInstance()->toString());
 }
 
